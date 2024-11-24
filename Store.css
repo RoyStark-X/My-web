@@ -1,0 +1,85 @@
+/* CSS for Unpublished Product Page */
+/* Style the header */
+header {
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  
+  background-color: rgba(22, 22, 23, .8);
+  color: #c9c9c9;
+  padding: 12px;}
+
+header h1 {margin: 0;}
+
+nav ul {list-style: none;
+  margin: 0px 0px 1px 0px;
+  padding: 0;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.5px;}
+
+
+
+nav li {display: inline-block;
+  margin-right: 40px;}
+
+nav a { color: #c9c9c9;
+  text-decoration: none;}
+
+.home-link {
+  margin-right: 40px;
+  font-size: 12px;
+  font-weight: 600;}
+/* Style for the page title */
+d1{display:flex;
+  background-color: #000;
+  height:600px;
+   flex-direction: column;
+  justify-content: flex-top;
+  }
+
+h1 {
+  font-size: 48px;
+  font-weight: bold;
+  color: #fff;
+  text-align: left;
+  margin-top: 40px;
+  margin-left: 40px;
+}
+
+
+d1 div{
+  text-align: center;
+}
+
+d1 input {
+  
+  background-color: #adadad;
+  font-size: 36px;
+  margin-top: -200px;
+  border-radius: 25px;
+}
+
+d1 button{
+  align-items: center;
+  color: black;
+  font-size: 36px;
+  font-weight: 600;
+  background-color: #ffffff;
+  border-radius: 15px;
+  margin-left: 10px;
+
+}
+
+/* Style for the product description */
+
+/* d2----------------------------------------- */
+d2 {
+
+display:flex;
+flex-direction: column;
+height: 600px
+}
+
