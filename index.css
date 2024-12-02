@@ -1,0 +1,639 @@
+/* Style the header */
+
+@media screen and (min-width: 1000px) and (max-width: 1920px)
+{
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(22, 22, 23, .8);
+  color: #ffffff;
+  padding: 4px;}
+
+
+header h1 {margin: 0;
+         }
+
+nav ul {list-style: none;
+
+  padding: 0;
+  text-align: center;
+ font-size: 8px;
+  font-weight: 400;
+  letter-spacing: 0.5px;}
+
+
+
+nav li {display: inline-block;
+  margin-right: 40px;
+       }
+
+nav a { color: #c9c9c9;
+  text-decoration: none;
+ }
+
+nav ul li img {
+  display: flex;
+  position:relative;
+  margin-top: auto;
+  margin-right:0px; 
+  margin-bottom: -2px;
+  width: 15px;
+  height: 15px;
+}
+
+/*d1-------------------------*/
+
+d1{
+  list-style: none;
+  background-color: #ffffff;
+  display: flex;
+  height: 70px;
+  
+  
+  justify-content: center;
+ 
+
+}
+
+d1 a{
+  
+
+   font-size: 13px;
+  font-weight: 400;
+  color: #696969;
+  
+  display: inline-block;
+  text-align: center;
+  margin-top: 50px;
+}
+
+d1 li a {  text-decoration: none;
+  color: blue;
+    margin-left: 10px;
+
+      
+    
+}
+
+/*main-------------------------*/
+/* Style the main section */
+main {
+  background-color: #000000;
+  width: auto;
+  height: auto;
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+main h1 {
+  display: block;
+  color: #ffffff;
+  font-size: 4vw;
+  text-align: center;
+  font-weight: 600;
+  margin-top: 40px;
+}
+
+main h2 {
+  color: #ffffff;
+  font-size: 2vw;
+  text-align: center;
+  font-weight: 400;
+  margin-top: -20px;
+}
+
+main h3 {
+  display: inline-block;
+  text-align: center;
+  margin-top: -5px;
+}
+
+main h3 a {
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  color: #2e93ff;
+  font-size: 1vw;
+  font-weight: 300;
+  margin-top: 0px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+main video {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -40px;
+  margin-bottom: 0;
+  height: auto;
+  width: 100%;
+}
+
+main img {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: 0;
+  height: 400px;
+  width: auto;
+}
+
+/* ----------------------------- */
+
+d2 {
+display: Flex;
+width:auto;
+height: 400px;
+background-color: #ffffff;
+flex-direction: column;
+height: 800px;
+}
+
+
+d2 h1{
+  font-size: 48px;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 50px;
+  }
+
+d2 h2{font-size: 24px;
+      font-weight:400px;
+     text-align: center;
+     margin-top: -20px;
+     font-weight: 400;}
+
+d2 h3{
+  display: inline-block;
+  text-align: center;
+  margin-top: -5px;
+}
+
+d2 h3 hh3 a{ 
+   text-decoration: none;
+  font-family: aria;
+  color: #2e93ff;
+  font-size: 18px;
+  font-weight: 400;
+  margin-top: 0px;
+   margin-left:5px;
+   margin-right: 5px;
+}
+
+/* 容器样式 */
+.container {
+  display: flex; /* 使用 Flexbox 创建横向布局 */
+  justify-content: space-between; /* 图片和文字两端对齐 */
+  align-items: center; /* 垂直居中对齐 */
+  max-width: 1200px; /* 限制最大宽度 */
+  margin: 0 auto; /* 居中容器 */
+  padding: 20px; /* 添加内边距 */
+}
+
+/* 左侧图片样式 */
+.left {
+  flex: 1; /* 左侧占据一半空间 */
+  display: flex; /* 确保图片居中对齐 */
+  justify-content: center;
+  align-items: center;
+}
+
+.left img {
+  width: 400px;
+  max-width: 100%; /* 图片宽度自适应 */
+  height: auto; /* 保持图片比例 */
+}
+
+/* 右侧文字样式 */
+.right {
+  flex: 1; /* 右侧占据一半空间 */
+  padding-left: 20px; /* 添加左边距，使文字和图片分隔 */
+}
+
+.right h1 {
+  font-size: 20px; /* 标题字体大小 */
+  font-weight: bold; /* 加粗标题 */
+  margin-bottom: 10px; /* 添加间距 */
+}
+
+.right p {
+  font-size: 1.2em; /* 段落字体大小 */
+  line-height: 1.6; /* 增加行高 */
+  margin-bottom: 20px; /* 添加段落下方间距 */
+}
+
+.right a {
+  display: inline-block; /* 链接显示为块状，方便调整 */
+  margin-right: 15px; /* 链接间距 */
+  text-decoration: none; /* 去除下划线 */
+  color: blue; /* 链接颜色 */
+  font-size: 1em;
+}
+
+
+/* ----------------------------- */
+d3 {
+display: Flex;
+width:auto;
+height: 400px;
+background-color: #000000;
+flex-direction: column;
+height: 800px;
+}
+
+
+
+applewatch-logo{
+  color: #ffffff;
+  background-color: #ffffff;
+
+}
+
+d3 h1{
+  font-size: 42px;
+  font-weight: 600;
+  text-align: center;
+  margin-top: -55px;
+  color: #ffffff;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+d3 h2{
+   color: #cc0000;
+    font-size: 20px;
+    font-weight:400px;
+     text-align: center;
+     margin-top: -30px;
+     font-weight: 400;
+     letter-spacing: 1px;
+     }
+
+d3 h3{font-size: 24px;
+      font-weight:400px;
+     text-align: center;
+     margin-top: -10px;
+     font-weight: 400;
+     color: #ffffff;
+     }
+d3 h4{
+  display: inline-block;
+  text-align: center;
+  margin-top: -5px;
+}
+d3 h4 hh3 a{ 
+   text-decoration: none;
+  
+  font-family: aria;
+  color: #2e93ff;
+  font-size: 18px;
+  font-weight: 300;
+  margin-top: 0px;
+   margin-left:5px;
+   margin-right: 5px;
+}
+
+d3 img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+  margin-top: auto;
+  margin-bottom: 0px;
+}
+
+
+
+/* ---------------------------------------- */
+d4 {
+  display: flex;
+  flex-direction: row; /* set flex direction to row */
+  justify-content: space-between; /* add space between the two blocks */
+  height: 800px;
+  background-color: #ffffff;
+}
+
+d4 div1 {
+  width: 50%; /* set width of each block to 48% */
+  display: flex;
+  flex-direction: column;
+  background-color: #000;
+  margin-top: 10px;
+  margin-right: 5px;
+  margin-bottom:5px;
+  margin-left: 10px;
+  text-align: center;
+}
+
+d4 h1 {
+  color: #ffffff;
+  font-size: 36px;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 50px;
+}
+
+d4 h2 {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 300px;
+  text-align: center;
+  margin-top: -20px;
+  font-weight: 400;
+}
+
+d4 h3 {
+  margin-top: 0px;
+  
+}
+d4 h3 hh3 a {  text-decoration: none;
+  font-family: aria;
+  color: #2990ff;
+  font-size: 16px;
+  font-weight: 300;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+
+d4 div1 img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+  margin-top: auto;
+  margin-bottom: 0px;
+}
+/* ---------------------------------------- */
+d4 div2 {
+  width: 50%; /* set width of each block to 48% */
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  margin-top: 10px;
+  margin-right: 10px;
+  margin-bottom:5px;
+  margin-left: 5px;
+  text-align: center;
+}
+
+d4 h4 {
+  color: #000000;
+  font-size: 36px;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 50px;
+}
+
+d4 h5 {
+   color: #000000;
+  font-size: 20px;
+  font-weight: 300px;
+  text-align: center;
+  margin-top: -50px;
+  font-weight: 400;
+}
+
+d4 h6{
+  margin-top: -10px;
+  
+}
+d4 h6 hh6 a {
+  text-decoration: none;
+   margin-left: 10px;
+  margin-right: 10px;
+  font-family: aria;
+  color: #2e93ff;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+
+d4 div2 img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+  margin-top: auto;
+  margin-bottom: 0px;
+}
+
+@media screen and (max-width: 800px) {
+  d4{
+     display: Flex;
+    flex-direction: column;
+    height: 830px;
+  }
+  
+  d4 div1 {
+width:auto;
+background-color: #000000;
+flex-direction: column;
+height: 400px;
+
+margin-left: 0px;
+margin-right: 0px;
+}
+  d4 div2{
+    width:auto;
+background-color: #ffffff;
+flex-direction: column;
+height: 400px;
+
+margin-left: 0px;
+margin-right: 0px;
+    margin-bottom: 20px;
+  }
+
+}
+
+/* ------------------------------------------------------------- */
+d5 {
+  display: flex;
+  flex-direction: row; /* set flex direction to row */
+  justify-content: space-between; /* add space between the two blocks */
+  height: 800px;
+  background-color: #ffffff;
+}
+
+d5 div1 {
+  width: 50%; /* set width of each block to 48% */
+  display: flex;
+  flex-direction: column;
+  background-color: #000;
+  margin-top: 5px;
+  margin-right: 5px;
+  margin-bottom:10px;
+  margin-left: 10px;
+  text-align: center;
+}
+
+d5 h1 {
+  color: #ffffff;
+  font-size: 36px;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 50px;
+}
+
+d5 h2 {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 300px;
+  text-align: center;
+  margin-top: -20px;
+  font-weight: 400;
+}
+
+d5 h3 {
+  margin-top: 0px;
+  
+}
+d5 h3 hh3 a {  text-decoration: none;
+  font-family: aria;
+  color: #2990ff;
+  font-size: 16px;
+  font-weight: 300;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+
+d5 div1 img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+  margin-top: auto;
+  margin-bottom: 0px;
+}
+/* ---------------------------------------- */
+d5 div2 {
+  width: 50%; /* set width of each block to 48% */
+  display: flex;
+  flex-direction: column;
+  background-color: #000000;
+  margin-top: 5px;
+  margin-right: 10px;
+  margin-bottom:10px;
+  margin-left: 5px;
+  text-align: center;
+}
+
+d5 h4 {
+  color: #ffffff;
+  font-size: 36px;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 50px;
+}
+
+d5 h5 {
+   color: #ffffff;
+  font-size: 20px;
+  font-weight: 300px;
+  text-align: center;
+  margin-top: -50px;
+  font-weight: 400;
+}
+
+d5 h6{
+  margin-top: -10px;
+  
+}
+d5 h6 hh6 a {
+  text-decoration: none;
+   margin-left: 10px;
+  margin-right: 10px;
+  font-family: aria;
+  color: #2e93ff;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+
+d5 div2 img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+  margin-top: auto;
+  margin-bottom: 0px;
+}
+
+
+
+@media screen and (max-width: 800px) {
+  d5{
+    height: 600px;
+     display: Flex;
+    flex-direction: column;
+  }
+  
+  d5 div1 {
+width:auto;
+background-color: #000000;
+flex-direction: column;
+height: 600px;
+
+margin-left: 0px;
+margin-right: 0px;
+}
+  d5 div2{
+    width:auto;
+background-color: #000000;
+flex-direction: column;
+height: 600px;
+
+margin-left: 0px;
+margin-right: 0px;
+  }
+
+}
+}
+
+@media screen and (max-width: 1000px) {
+  nav li {
+    margin-right: 4vw;
+  }
+  nav ul li img {
+  margin-top: auto;
+  margin-right:0vw; 
+  margin-bottom: -2px;
+}
+}
+
+@media screen and (max-width: 850px) {
+
+nav ul li a{
+  display:none;
+    }
+
+}
+
+
+@media screen and (max-width: 1200px) {
+
+  main{
+    width: auto;
+  }
+  }
+@media screen and (max-width: 800px) {
+    main {
+      width: auto;
+      height: 580px;
+            }
+  
+  
+  main h1{ font-size: 40px;}
+  main h2 {font-size: 20px ;}
+  main h3 {font-size: 20px;}
+     main img{
+    width:300px;
+    height:auto;
+  } 
+  }
