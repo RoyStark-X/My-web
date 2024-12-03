@@ -1,6 +1,6 @@
 /* Style the header */
 
-@media screen and (min-width: 1000px)
+@media screen and (min-width: 100px)
 {
 header {
   position: fixed;
@@ -148,21 +148,22 @@ main img {
   align-items: flex-start;
   padding: 40px;
   gap: 60px;
-  max-width: 1200px;
+
   margin: 0 auto;
-  position: relative;
+  height: 500px;
 }
 
 .profile-image {
-  width: 400px;
-  min-width: 300px;
-  max-width: 30%;
+  height: 100%;
+  width: 350px;
+  overflow: hidden;
 }
 
 .profile-image img {
-  width: 100%;
-  height: auto;
+  width: 350px;
+  height: 450px;
   object-fit: cover;
+  object-position: center;
   display: block;
 }
 
@@ -628,22 +629,19 @@ nav ul li a{
   } 
   }
 
-/* 添加响应式设计 */
 @media screen and (max-width: 768px) {
   .profile-section {
+    height: auto;
     flex-direction: column;
-    padding: 20px;
   }
   
   .profile-image {
     width: 100%;
-    max-width: 300px;
-    margin: 0 auto;
+    height: 350px;
   }
   
-  .profile-content {
-    max-width: 100%;
-    padding-left: 0;
-    margin-top: 20px;
+  .profile-image img {
+    width: 100%;
+    height: 300px;
   }
 }
