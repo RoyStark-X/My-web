@@ -148,22 +148,28 @@ main img {
   align-items: flex-start;
   padding: 40px;
   gap: 60px;
-  max-width: 1200px;  /* 添加最大宽度 */
-  margin: 0 auto;     /* 居中显示 */
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
 }
 
 .profile-image {
-  flex: 0 0 30%;    /* 固定宽度30% */
+  width: 400px;
+  min-width: 300px;
+  max-width: 30%;
 }
 
 .profile-image img {
-  width: 100%;      /* 改为100%以填充容器 */
+  width: 100%;
   height: auto;
+  object-fit: cover;
+  display: block;
 }
 
 .profile-content {
-  flex: 0 0 60%;    /* 固定宽度60% */
+  flex: 1;
   padding-left: 20px;
+  max-width: 60%;
 }
 
 /* 其他样式保持不变 */
@@ -621,3 +627,23 @@ nav ul li a{
     height:auto;
   } 
   }
+
+/* 添加响应式设计 */
+@media screen and (max-width: 768px) {
+  .profile-section {
+    flex-direction: column;
+    padding: 20px;
+  }
+  
+  .profile-image {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  .profile-content {
+    max-width: 100%;
+    padding-left: 0;
+    margin-top: 20px;
+  }
+}
