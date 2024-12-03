@@ -1,6 +1,6 @@
 /* Style the header */
 
-@media screen and (min-width: 1000px) and (max-width: 1920px)
+@media screen and (min-width: 1000px)
 {
 header {
   position: fixed;
@@ -143,95 +143,77 @@ main img {
 }
 
 /* ----------------------------- */
-
-d2 {
-display: Flex;
-width:auto;
-height: 400px;
-background-color: #ffffff;
-flex-direction: column;
-height: 800px;
+.profile-section {
+  display: flex;
+  align-items: flex-start;
+  padding: 40px;
+  gap: 60px;
 }
 
+.profile-image {
+  flex: 0 0 auto;
+  width: 25%; /* 调整为25% */
+}
 
-d2 h1{
-  font-size: 48px;
+.profile-image img {
+  width: 100%;
+  height: auto;
+}
+
+.profile-content {
+  flex: 1;
+  padding-left: 20px;
+}
+
+.profile-content h1 {
+  font-size: 2.5rem;
+  margin-Top: 0.5rem;
+}
+
+.profile-content h2 {
+  font-size: 1.2rem;
+  line-height: 1;
+  margin-bottom: 0rem;
+  white-space: pre-line;
+}
+
+.highlight-text {
+  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
   font-weight: 600;
-  text-align: center;
-  margin-top: 50px;
-  }
-
-d2 h2{font-size: 24px;
-      font-weight:400px;
-     text-align: center;
-     margin-top: -20px;
-     font-weight: 400;}
-
-d2 h3{
-  display: inline-block;
-  text-align: center;
-  margin-top: -5px;
+  color: #373737;
+  letter-spacing: 0.5px;
 }
 
-d2 h3 hh3 a{ 
-   text-decoration: none;
-  font-family: aria;
-  color: #2e93ff;
-  font-size: 18px;
-  font-weight: 400;
-  margin-top: 0px;
-   margin-left:5px;
-   margin-right: 5px;
+.year-text {
+  font-family: 'SF Mono', monospace;
+  color: #2c2c2c;
+  background: linear-gradient(120deg, #e6f3ff 0%, #f0f9ff 100%);
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-left: 5px;
 }
 
-/* 容器样式 */
-.container {
-  display: flex; /* 使用 Flexbox 创建横向布局 */
-  justify-content: space-between; /* 图片和文字两端对齐 */
-  align-items: center; /* 垂直居中对齐 */
-  max-width: 1200px; /* 限制最大宽度 */
-  margin: 0 auto; /* 居中容器 */
-  padding: 20px; /* 添加内边距 */
+.profile-content h3 {
+  font-size: 1.2rem;        /* 稍微增大字号 */
+  line-height: 1.8;         /* 增加行高提升可读性 */
+  margin-bottom: 2.5rem;    /* 增加底部间距 */
+  white-space: pre-line;
+  font-weight: 400;         /* 使用细一点的字重 */
+  color: #333;              /* 柔和的深灰色 */
+  letter-spacing: 0.5px;    /* 增加字间距 */
+  font-family: "Helvetica Neue", Arial, sans-serif;  /* 更现代的字体 */
 }
 
-/* 左侧图片样式 */
-.left {
-  flex: 1; /* 左侧占据一半空间 */
-  display: flex; /* 确保图片居中对齐 */
-  justify-content: center;
-  align-items: center;
+.profile-links {
+  display: flex;
+  gap: 30px;
+  margin-top: 3rem;
 }
 
-.left img {
-  width: 400px;
-  max-width: 100%; /* 图片宽度自适应 */
-  height: auto; /* 保持图片比例 */
-}
-
-/* 右侧文字样式 */
-.right {
-  flex: 1; /* 右侧占据一半空间 */
-  padding-left: 20px; /* 添加左边距，使文字和图片分隔 */
-}
-
-.right h1 {
-  font-size: 20px; /* 标题字体大小 */
-  font-weight: bold; /* 加粗标题 */
-  margin-bottom: 10px; /* 添加间距 */
-}
-
-.right p {
-  font-size: 1.2em; /* 段落字体大小 */
-  line-height: 1.6; /* 增加行高 */
-  margin-bottom: 20px; /* 添加段落下方间距 */
-}
-
-.right a {
-  display: inline-block; /* 链接显示为块状，方便调整 */
-  margin-right: 15px; /* 链接间距 */
-  text-decoration: none; /* 去除下划线 */
-  color: blue; /* 链接颜色 */
-  font-size: 1em;
+.profile-links a {
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: inherit;
 }
 
 
