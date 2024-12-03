@@ -148,23 +148,25 @@ main img {
   align-items: flex-start;
   padding: 40px;
   gap: 60px;
+  max-width: 1200px;  /* 添加最大宽度 */
+  margin: 0 auto;     /* 居中显示 */
 }
 
 .profile-image {
-  flex: 0 0 auto;
-  width: 25%; /* 调整为25% */
+  flex: 0 0 30%;    /* 固定宽度30% */
 }
 
 .profile-image img {
-  width: 100%;
+  width: 100%;      /* 改为100%以填充容器 */
   height: auto;
 }
 
 .profile-content {
-  flex: 1;
+  flex: 0 0 60%;    /* 固定宽度60% */
   padding-left: 20px;
 }
 
+/* 其他样式保持不变 */
 .profile-content h1 {
   font-size: 2.5rem;
   margin-Top: 0.5rem;
