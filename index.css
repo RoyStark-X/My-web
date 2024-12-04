@@ -198,7 +198,7 @@ main img {
 .profile-content h3 {
   font-size: 1.2rem;        /* 稍微增大字号 */
   line-height: 1.8;         /* 增加行高提升可读性 */
-  margin-bottom: 2.5rem;    /* 增加底部间距 */
+  margin-bottom: 1rem;    /* 增加底部间距 */
   white-space: pre-line;
   font-weight: 400;         /* 使用细一点的字重 */
   color: #333;              /* 柔和的深灰色 */
@@ -208,25 +208,55 @@ main img {
 
 .profile-links {
   display: flex;
-  gap: 30px;
-  margin-top: 3rem;
+  gap: 40px;
+  margin-top: 1rem;
+  margin-bottom: 5rem;
 }
 
 .profile-links a {
-  font-size: 1.4rem;
+  font-size: 1.1rem;
   text-decoration: none;
-  color: inherit;
+  color: #0033ff;
+  font-family: 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 5600;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;  /* 转换为大写 */
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.05) 50%,
+    transparent 50%
+  );
+  background-size: 200% 100%;
+  background-position: right bottom;
+  border: 1px solid rgba(45, 45, 45, 0.1);
 }
 
+.profile-links a:hover {
+  color: #000;
+  background-position: left bottom;
+  border-color: rgba(45, 45, 45, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+
+.profile-links a:hover::after {
+  opacity: 1;
+  transform: translateX(0);
+}
 
 /* ----------------------------- */
 d3 {
 display: Flex;
 width:auto;
 height: 400px;
-background-color: #000000;
+background-color: #ffffff;
 flex-direction: column;
-height: 800px;
+height: Auto;
 }
 
 
@@ -242,7 +272,7 @@ d3 h1{
   font-weight: 600;
   text-align: center;
   margin-top: -55px;
-  color: #ffffff;
+  color: #000000;
   margin-right: 10px;
   margin-left: 10px;
 }
@@ -252,7 +282,7 @@ d3 h2{
     font-size: 20px;
     font-weight:400px;
      text-align: center;
-     margin-top: -30px;
+     margin-top: 0px;
      font-weight: 400;
      letter-spacing: 1px;
      }
@@ -262,7 +292,7 @@ d3 h3{font-size: 24px;
      text-align: center;
      margin-top: -10px;
      font-weight: 400;
-     color: #ffffff;
+     color: #000000;
      }
 d3 h4{
   display: inline-block;

@@ -1,0 +1,129 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    line-height: 1.8;
+    background-color: #f8f9fa;
+    margin: 0;           
+    padding: 0;         
+}
+
+header {
+    background: linear-gradient(135deg, #1c6fcd, #c3caec);
+    padding: 35px calc((100% - 1000px) / 2);
+    color: #ffffff;
+    text-align: left;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 3.2em;
+    font-weight: 600;
+    margin: 0 0 15px 0;
+    color: #ffffff;
+    letter-spacing: 0.02em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+header p {
+    font-size: 1.05em;
+    margin: 8px 0;
+    color: rgba(255, 255, 255, 0.92);
+    letter-spacing: 0.01em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+header a {
+    color: #ffffff;
+    text-decoration: none;
+    padding-bottom: 1px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.2s ease;
+}
+
+header a:hover {
+    color: #e0e0e0;
+    border-bottom-color: #e0e0e0;
+}
+
+.website-link {
+    display: inline-block;
+    padding: 4px 12px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 4px;
+    border: none;
+    transition: all 0.2s ease;
+}
+
+.website-link:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-1px);
+}
+
+main {
+    max-width: 1000px;
+    padding: 40px;
+    margin: 30px auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-size: 1.8em;
+    color: #1a237e;
+    border-bottom: 2px solid #1a237e;
+    margin: 40px 0 25px;
+    padding-bottom: 10px;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+ul li {
+    margin: 20px 0;
+    position: relative;
+}
+
+ul li strong {
+    color: #0d47a1;
+    font-size: 1.1em;
+    display: block;
+    margin-bottom: 8px;
+}
+
+ul ul {
+    margin: 10px 0 10px 20px;
+}
+
+ul ul li {
+    margin: 5px 0;
+    color: #555;
+    font-size: 0.95em;
+}
+
+section:last-child p {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+@media (max-width: 768px) {
+    main {
+        padding: 20px;
+        margin: 15px;
+    }
+    
+    header h1 {
+        font-size: 2.5em;
+    }
+}
+
+@media (min-width: 768px) {
+    header {
+        padding: 30px calc((100% - 1000px) / 2);
+    }
+}
