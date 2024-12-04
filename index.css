@@ -436,7 +436,7 @@ d4 div2 img {
   margin-bottom: 0px;
 }
 
-@media screen and (max-width: 100px) {
+@media screen and (max-width: 800px) {
   d4{
      display: Flex;
     flex-direction: column;
@@ -581,7 +581,7 @@ d5 div2 img {
 
 
 
-@media screen and (max-width: 100px) {
+@media screen and (max-width: 800px) {
   d5{
     height: 600px;
      display: Flex;
