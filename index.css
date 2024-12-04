@@ -253,7 +253,7 @@ main img {
 d3 {
 display: Flex;
 width:auto;
-height: 400px;
+height: Auto;
 background-color: #ffffff;
 flex-direction: column;
 height: Auto;
@@ -436,7 +436,7 @@ d4 div2 img {
   margin-bottom: 0px;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 100px) {
   d4{
      display: Flex;
     flex-direction: column;
@@ -581,7 +581,7 @@ d5 div2 img {
 
 
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 100px) {
   d5{
     height: 600px;
      display: Flex;
