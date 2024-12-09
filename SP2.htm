@@ -1,0 +1,512 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:SimSun;
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:DengXian;
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+@font-face
+	{font-family:"\@DengXian";
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+@font-face
+	{font-family:"\@SimSun";
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0cm;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	line-height:150%;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+h1
+	{mso-style-link:"Heading 1 Char";
+	margin-top:17.0pt;
+	margin-right:0cm;
+	margin-bottom:16.5pt;
+	margin-left:0cm;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	line-height:240%;
+	page-break-after:avoid;
+	font-size:22.0pt;
+	font-family:"Times New Roman",serif;}
+h2
+	{mso-style-link:"Heading 2 Char";
+	margin-top:13.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	line-height:150%;
+	page-break-after:avoid;
+	font-size:16.0pt;
+	font-family:"Times New Roman",serif;}
+span.Heading1Char
+	{mso-style-name:"Heading 1 Char";
+	mso-style-link:"Heading 1";
+	font-family:"Times New Roman",serif;
+	font-weight:bold;}
+span.Heading2Char
+	{mso-style-name:"Heading 2 Char";
+	mso-style-link:"Heading 2";
+	font-family:"Times New Roman",serif;
+	font-weight:bold;}
+p.PIC, li.PIC, div.PIC
+	{mso-style-name:PIC;
+	mso-style-link:"PIC Char";
+	margin:0cm;
+	text-align:center;
+	line-height:150%;
+	font-size:10.5pt;
+	font-family:"Times New Roman",serif;}
+span.PICChar
+	{mso-style-name:"PIC Char";
+	mso-style-link:PIC;
+	font-family:"Times New Roman",serif;}
+.MsoChpDefault
+	{font-family:DengXian;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 72.0pt 72.0pt 72.0pt;
+	layout-grid:15.6pt;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+
+</head>
+
+<body lang=ZH-CN style='word-wrap:break-word;text-justify-trim:punctuation'>
+
+<div class=WordSection1 style='layout-grid:15.6pt'>
+
+<h1 align=center style='text-align:center'><span lang=EN-US>Topography, Topology
+and Thinning optimization of Auto hood</span></h1>
+
+<h2><span lang=EN-US>1.Introduction</span></h2>
+
+<p class=MsoNormal><span lang=EN-US>This project aims to optimize a car hood to
+improve structural performance and reduce weight, which is critical for a
+sports car. Through topography, specification, and topology optimization, we
+will increase stiffness, minimize mass, and verify the manufacturing
+feasibility of the hood. Each optimization step (benchmarking, structural
+reinforcement, thickness adjustment, and material removal) ensures an
+efficient, manufacturable design that withstands aerodynamic forces while
+improving vehicle performance. The end result will be a lightweight,
+high-performance hood.</span><span lang=EN-US> </span></p>
+
+<p class=PIC><span lang=EN-US><img width=602 height=26
+src="SP2_files/image001.png"></span></p>
+
+<p class=PIC><span lang=EN-US>Figure 1. Material Details</span></p>
+
+<h2 style='margin-left:18.0pt;text-indent:-18.0pt'><span lang=EN-US>1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-US>Initial Design and Benchmark Analysis</span></h2>
+
+<p class=MsoNormal><span lang=EN-US>The design of a car hood must consider
+aerodynamic pressures experienced during driving, where dynamic pressure
+increases with the square of the vehicle's speed, though it remains relatively
+low (far below 1 MPa) under normal conditions. </span></p>
+
+<p class=MsoNormal><b><span lang=EN-US>The dynamic pressure exerted on the hood
+can be calculated using the formula:</span></b></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US>q=1/&#8203;2</span><span
+lang=EN-US style='font-family:"Cambria Math",serif'>&#8901;</span><span
+lang=EN-US>&#961;</span><span lang=EN-US style='font-family:"Cambria Math",serif'>&#8901;</span><span
+lang=EN-US>v<sup>2</sup></span></p>
+
+<p class=MsoNormal><b><span lang=EN-US>At 200 km/h (approximately 55.56 m/s):</span></b></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US>q=1/2</span><span
+lang=EN-US style='font-family:"Cambria Math",serif'>&#8901;</span><span
+lang=EN-US>1.225</span><span lang=EN-US style='font-family:"Cambria Math",serif'>&#8901;</span><span
+lang=EN-US>(55.56)2&#8776;1,890.4&#8201;Pa</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Beyond aerodynamics, the hood must
+withstand extreme wind conditions, acceleration and deceleration forces, impact
+from debris or animals, structural stresses from vehicle dynamics, thermal
+expansion due to engine heat, and comply with safety and regulatory standards
+such as pedestrian protection and crashworthiness. Therefore, we consider the
+pressure of the hood as 0.1Mpa, the design standards for a car hood should
+ensure structural integrity using high-strength, lightweight materials,
+incorporate safety features to absorb impact energy, optimize aerodynamic
+efficiency, and adhere to manufacturing quality while considering environmental
+sustainability. The four edges of hood are constrained, and the surface is
+subjected to 0.1Mpa of pressure.</span></p>
+
+<p class=PIC><span lang=EN-US><img width=412 height=228
+src="SP2_files/image002.png"></span></p>
+
+<p class=PIC><span lang=EN-US>Figure 2. Model Details</span></p>
+
+<p class=MsoNormal><span lang=EN-US>The FE analysis is performed for the Linear
+Static and Normal Mode load cases to evaluate the performance of the existing
+design.</span></p>
+
+<p class=PIC><span lang=EN-US><img width=304 height=198
+src="SP2_files/image003.png"></span><span lang=EN-US> <img width=286
+height=191 src="SP2_files/image004.png"> <img width=321 height=211
+src="SP2_files/image005.png"></span></p>
+
+<p class=PIC><span lang=EN-US>Figure 3. Existing Design Analysis</span></p>
+
+<p class=MsoNormal><span lang=EN-US>The existing design is meeting the
+performance targets (refer Table 1). </span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr style='height:40.8pt'>
+  <td width=120 valign=top style='width:90.15pt;border:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:40.8pt'>
+  <p class=PIC><span lang=EN-US>Details</span></p>
+  </td>
+  <td width=120 valign=top style='width:90.15pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt;height:40.8pt'>
+  <p class=PIC><span lang=EN-US>Max        Stress</span></p>
+  <p class=PIC><span lang=EN-US>(MPa)</span></p>
+  </td>
+  <td width=128 valign=top style='width:95.9pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt;height:40.8pt'>
+  <p class=PIC><span lang=EN-US>Max Displacement (mm)</span></p>
+  </td>
+  <td width=123 valign=top style='width:92.1pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt;height:40.8pt'>
+  <p class=PIC><span lang=EN-US>Normal        Mode 1</span></p>
+  <p class=PIC><span lang=EN-US>(Hz)</span></p>
+  </td>
+  <td width=110 valign=top style='width:82.5pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt;height:40.8pt'>
+  <p class=PIC><span lang=EN-US>Mass (Kgs)</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:90.15pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US>Existing       Design</span></p>
+  </td>
+  <td width=120 valign=top style='width:90.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US>164.7</span></p>
+  </td>
+  <td width=128 valign=top style='width:95.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US>1.63</span></p>
+  </td>
+  <td width=123 valign=top style='width:92.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US>939.64</span></p>
+  </td>
+  <td width=110 valign=top style='width:82.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US>0.06</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<h2 style='margin-left:18.0pt;text-indent:-18.0pt'><span lang=EN-US>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-US>Topography Optimization</span></h2>
+
+<p class=MsoNormal><span lang=EN-US>In this part we conduct topography optimization,
+adds beads and swages to improve the stiffness and frequencies for the hood
+designed. These structural features help the hood resist deformation caused by
+aerodynamic forces and improve its vibration resistance at high speeds.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>The thickness of hood is 1mm, as mentioned
+before, we consider the entire part surface subject to 1Mpa uniformly. So we
+set the entire hood as design space, and set symmetric constrain in Z-axis.</span></p>
+
+<p class=PIC><span lang=EN-US><img width=349 height=261
+src="SP2_files/image006.png"></span></p>
+
+<p class=PIC><span lang=EN-US>Figure 4. Topography Optimization set-up details</span></p>
+
+<p class=MsoNormal><span lang=EN-US>We run 3 concepts by varying the minimum
+bead width: 15 mm, 10 mm and 5mm</span><span lang=EN-US style='font-family:
+SimSun'>,</span><span lang=EN-US>bead depth of 2.5 mm and draw angle of 75
+degrees is</span><span lang=EN-US> </span><span lang=EN-US>maintained for all
+the 3 concepts. Optimization is performed with “Maximize</span><span
+lang=EN-US> </span><span lang=EN-US>Stiffness” as the objective with Maximize
+Frequencies as a constraint. The</span><span lang=EN-US> </span><span
+lang=EN-US>concepts generated can be seen below (Figure 5).</span></p>
+
+<p class=PIC><span lang=EN-US> <img width=280 height=223
+src="SP2_files/image007.png"></span><span lang=EN-US> <img width=282
+height=217 src="SP2_files/image008.png"></span></p>
+
+<p class=PIC><span lang=EN-US>&nbsp;</span></p>
+
+<p class=PIC><span lang=EN-US>&nbsp;</span></p>
+
+<p class=PIC><span lang=EN-US><img width=258 height=202
+src="SP2_files/image009.png"></span></p>
+
+<p class=PIC><span lang=EN-US>Figure 5. Topography Optimization Concepts</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Conduct analyzes of 3 optimized parts, the performances
+are shown below. The concept with bead width of 5mm works best for the results.</span></p>
+
+<div align=center>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr style='height:37.3pt'>
+  <td width=189 style='width:141.5pt;border:solid windowtext 1.0pt;padding:
+  0cm 5.4pt 0cm 5.4pt;height:37.3pt'>
+  <p class=PIC><span lang=EN-US>Details</span></p>
+  </td>
+  <td width=113 style='width:3.0cm;border:solid windowtext 1.0pt;border-left:
+  none;padding:0cm 5.4pt 0cm 5.4pt;height:37.3pt'>
+  <p class=PIC><span lang=EN-US>Max        Stress</span></p>
+  <p class=PIC><span lang=EN-US>(MPa)</span></p>
+  </td>
+  <td width=147 style='width:110.0pt;border:solid windowtext 1.0pt;border-left:
+  none;padding:0cm 5.4pt 0cm 5.4pt;height:37.3pt'>
+  <p class=PIC><span lang=EN-US>Max Displacement (mm)</span></p>
+  </td>
+  <td width=114 style='width:85.25pt;border:solid windowtext 1.0pt;border-left:
+  none;padding:0cm 5.4pt 0cm 5.4pt;height:37.3pt'>
+  <p class=PIC><span lang=EN-US>Mass</span></p>
+  <p class=PIC><span lang=EN-US>(Kgs)</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=189 style='width:141.5pt;border:solid windowtext 1.0pt;border-top:
+  none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=PIC><span lang=EN-US>Topography 2.5 deep </span></p>
+  <p class=PIC><span lang=EN-US>5mm bead width</span></p>
+  </td>
+  <td width=113 style='width:3.0cm;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=PIC><span lang=EN-US>192.2</span></p>
+  </td>
+  <td width=147 style='width:110.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=PIC><span lang=EN-US>0.414</span></p>
+  </td>
+  <td width=114 style='width:85.25pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=PIC><span lang=EN-US>0.06</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=189 style='width:141.5pt;border:solid windowtext 1.0pt;border-top:
+  none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=PIC><span lang=EN-US>Topography 2.5 deep</span></p>
+  <p class=PIC><span lang=EN-US>10mm bead width</span></p>
+  </td>
+  <td width=113 style='width:3.0cm;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=PIC><span lang=EN-US>167.6</span></p>
+  </td>
+  <td width=147 style='width:110.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=PIC><span lang=EN-US>0.466</span></p>
+  </td>
+  <td width=114 style='width:85.25pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=PIC><span lang=EN-US>0.06</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=189 style='width:141.5pt;border:solid windowtext 1.0pt;border-top:
+  none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=PIC><span lang=EN-US>Topography 2.5 deep</span></p>
+  <p class=PIC><span lang=EN-US>15mm bead width</span></p>
+  </td>
+  <td width=113 style='width:3.0cm;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=PIC><span lang=EN-US>177</span></p>
+  </td>
+  <td width=147 style='width:110.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=PIC><span lang=EN-US>0.531</span></p>
+  </td>
+  <td width=114 style='width:85.25pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=PIC><span lang=EN-US>0.06</span></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=PIC><span lang=EN-US>Table 2. Performance of concepts generated</span></p>
+
+<h2 style='margin-left:18.0pt;text-indent:-18.0pt'><span lang=EN-US>3.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-US>Design Interpretation using PolyNURBs</span></h2>
+
+<p class=MsoNormal><span lang=EN-US>PolyNURBs are used to convert the optimized
+topography into a smooth, manufacturable shape. We use the best concept
+mentioned above to conduct PolyNURBs. This step reshapes the bead-reinforced
+design into a continuous form suitable for production, ensuring structural
+improvements are retained. By tracing the optimized contours, we create a
+realistic hood design that balances performance and manufacturability, ready
+for the next optimization stages.</span></p>
+
+<p class=PIC><span lang=EN-US><img width=375 height=247
+src="SP2_files/image010.png"></span></p>
+
+<p class=PIC><span lang=EN-US>Figure 6. PolyNURB Interpretation</span></p>
+
+<h2 style='margin-left:18.0pt;text-indent:-18.0pt'><span lang=EN-US>4.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-US>Gauge Optimization</span></h2>
+
+<p class=MsoNormal><span lang=EN-US>Gauge optimization reduces the hood’s
+weight by adjusting material thickness in non-critical areas, maintaining
+strength and stability. The current thickness is 1mm. With “minimize mass”, minimum
+frequency constraint of 800 Hz and a Safety Factor of 1.2 as the goal, we
+refine thickness distribution while ensuring required stiffness and safety
+standards, achieving a lighter yet robust design.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>The optimizer runs through iterations and
+comes up with a reduced thickness of 0.878 mm, while meeting all the
+constraints. The mass of the component is also reduced from 0.063 Kgs to 0.055
+Kgs, which is 12.7%</span></p>
+
+<p class=PIC><span lang=EN-US><img width=300 height=202
+src="SP2_files/image011.png"></span></p>
+
+<p class=PIC><span lang=EN-US>Figure 7. Gauge Optimization</span></p>
+
+<h2 style='margin-left:18.0pt;text-indent:-18.0pt'><span lang=EN-US>5.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-US>Topology Optimization</span></h2>
+
+<p class=MsoNormal><span lang=EN-US>Topology optimization optimizes material
+distribution by creating openings or pockets in low stress areas of the hood,
+further reducing weight while maintaining structural integrity.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>The goal is to achieve optimal load paths
+by removing unnecessary material, thereby reducing weight without compromising
+strength or stiffness. </span></p>
+
+<p class=MsoNormal><span lang=EN-US>Duo to the uniformly arrange of pressure on
+the surface of the hood, we conduct topology optimization to the entire hood, define
+non-critical areas as the design space and set material volume constraints,
+typically retaining around 60% of the original material. Using &quot;maximize
+stiffness&quot; as the goal, optimization determines areas where material needs
+to be removed and proposes the ideal configuration with holes or pockets to
+achieve a lightweight design. In result, the weight has been reduced from
+0.055kgs to 0.051kgs, which is more than 7%.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Topology optimization maximizes material
+efficiency, creating a structurally sound but lighter hood. This step is key to
+achieving the overall weight reduction goals while ensuring the hood can
+withstand aerodynamic and structural loads. </span></p>
+
+<p class=PIC><span lang=EN-US><img width=237 height=175
+src="SP2_files/image012.png"></span><span lang=EN-US> <img width=236
+height=178 src="SP2_files/image013.png"></span></p>
+
+<p class=PIC><span lang=EN-US>Figure 8. Topology Optimization</span></p>
+
+<h2 style='margin-left:18.0pt;text-indent:-18.0pt'><span lang=EN-US>6.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-US>Final Design Validation</span></h2>
+
+<p class=MsoNormal><span lang=EN-US>Although we have conducted topology
+optimization and reduced weight somehow, the auto hood needs to be entirely
+closed part to protect auto parts inside. So we still use the model in previous
+step as our final optimized design.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Final design validation confirms that the
+optimized hood meets the required performance benchmarks for stress,
+displacement, and frequency. This step ensures that all optimizations
+collectively achieve the desired strength and stability.</span></p>
+
+<p class=PIC><span lang=EN-US><img width=273 height=162
+src="SP2_files/image014.png"></span><span lang=EN-US> <img width=274
+height=163 src="SP2_files/image015.png"><img width=309 height=187
+src="SP2_files/image016.png"></span></p>
+
+<p class=PIC><span lang=EN-US>Figure 9. Final Design Validation</span></p>
+
+<h2 style='margin-left:18.0pt;text-indent:-18.0pt'><span lang=EN-US>7.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-US>Results Discussion</span></h2>
+
+<p class=PIC><span lang=EN-US><img width=601 height=141
+src="SP2_files/image017.png"></span></p>
+
+<p class=PIC><span lang=EN-US>Table 3. Results comparison</span></p>
+
+<p class=MsoNormal><span lang=EN-US>The final topology-optimized design
+achieves a 15% mass reduction, lowering the mass to 0.051 kg while slightly
+reducing max stress to 162.4 MPa (-1.4%) and decreasing max displacement by 26%
+to 1.203 mm. The stress seems not changed sightly, which is because the part
+have </span><span lang=EN-US>poor </span><span lang=EN-US>mesh</span><span
+lang=EN-US> geometry</span><span lang=EN-US> and the stress are concentrated at
+some points, while the most of other areas still have a significant reduction
+of average stress. It also maintains a high natural frequency at 1070.26 Hz,
+indicating that the design meets performance standards with enhanced weight
+efficiency and structural stability.</span></p>
+
+<h2 style='margin-left:18.0pt;text-indent:-18.0pt'><span lang=EN-US>8.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-US>Manufacturing Feasibility Analysis</span></h2>
+
+<p class=MsoNormal><span lang=EN-US>Manufacturing feasibility analysis checks
+whether the optimized hood design can be produced without defects during the
+forming process, such as thinning, wrinkling, or over-stretching. Ensures that
+the optimized design is manufacturable and has no defects that could affect its
+quality or performance. </span></p>
+
+<p class=MsoNormal><span lang=EN-US>The red areas indicate a high degree of
+thinning. This is due to meshing issues caused by poor model geometry, but we
+can see that except for the geometry problem points, all parts are below 20%.</span><span
+lang=EN-US> </span><span lang=EN-US>Formability: Red indicates areas at risk of
+failure, and blue indicates safe areas. It can be seen that</span><span
+lang=EN-US> </span><span lang=EN-US>there are almost no red parts in the
+picture.</span><span lang=EN-US> </span><span lang=EN-US>Thickness
+distribution: Shows the material thickness of the entire hood, from thinner
+areas to thicker areas. The part thickness balance is good in the picture.</span></p>
+
+<p class=PIC><span lang=EN-US><img width=273 height=171
+src="SP2_files/image018.png"></span><span lang=EN-US> <img width=261
+height=173 src="SP2_files/image019.png"><img width=280 height=180
+src="SP2_files/image020.png"> <img width=271 height=180 id="Picture 1"
+src="SP2_files/image021.png"></span></p>
+
+<p class=PIC><span lang=EN-US>Figure 10. Manufacturing Feasibility Analysis
+Results</span></p>
+
+</div>
+
+</body>
+
+</html>
