@@ -7,8 +7,9 @@ header {
   top: 0;
   left: 0;
   right: 0;
-  background-color: rgba(22, 22, 23, .8);
-  color: #ffffff;
+  background-color: rgba(234, 234, 234, 0.9); /* 使用 rgba 添加透明度 */
+  backdrop-filter: blur(5px); /* 添加毛玻璃效果 */
+  transition: all 0.3s ease; /* 添加过渡效果 */
   padding: 0px;}
 
 
@@ -29,7 +30,7 @@ nav li {display: inline-block;
   margin-right: 40px;
        }
 
-nav a { color: #c9c9c9;
+nav a { color: #000000;
   text-decoration: none;
  }
 
@@ -45,42 +46,12 @@ nav ul li img {
 
 /*d1-------------------------*/
 
-d1{
-  list-style: none;
-  background-color: #ffffff;
-  display: flex;
-  height: 70px;
-  
-  
-  justify-content: center;
- 
 
-}
-
-d1 a{
-  
-
-   font-size: 13px;
-  font-weight: 400;
-  color: #696969;
-  
-  display: inline-block;
-  text-align: center;
-  margin-top: 50px;
-}
-
-d1 li a {  text-decoration: none;
-  color: blue;
-    margin-left: 10px;
-
-      
-    
-}
 
 /*main-------------------------*/
 /* Style the main section */
 main {
-  background-color: #000000;
+  background-color: #ffffff;
   width: auto;
   height: auto;
   margin: 0px;
@@ -92,15 +63,15 @@ main {
 
 main h1 {
   display: block;
-  color: #ffffff;
+  color: #000000;
   font-size: 4vw;
   text-align: center;
   font-weight: 600;
-  margin-top: 40px;
+  margin-top: 60px;
 }
 
 main h2 {
-  color: #ffffff;
+  color: #000000;
   font-size: 2vw;
   text-align: center;
   font-weight: 400;
@@ -124,23 +95,18 @@ main h3 a {
   margin-right: 5px;
 }
 
+
 main video {
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: -40px;
-  margin-bottom: 0;
-  height: auto;
+  position: sticky;
+  top: 0;
   width: 100%;
+  height: auto;
+  transition: all 0.1s;
+  background: white; /* 添加白色背景 */
 }
 
-main img {
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: auto;
-  margin-bottom: 0;
-  height: 400px;
-  width: auto;
-}
+
+
 
 /* ----------------------------- */
 .profile-section {
@@ -210,7 +176,7 @@ main img {
   display: flex;
   gap: 40px;
   margin-top: 1rem;
-  margin-bottom: 5rem;
+  margin-bottom: 1rem;
 }
 
 .profile-links a {
@@ -254,69 +220,34 @@ d3 {
 display: Flex;
 width:auto;
 height: Auto;
-background-color: #ffffff;
+background-color: #e2e2e2;
 flex-direction: column;
 height: Auto;
 }
 
 
+d3 h1{font-size: 42px;
+ font-weight:1000px;
+ text-align: center;
+ margin-top: 2rem;
+ color: #000000;
+ }
 
-applewatch-logo{
-  color: #ffffff;
-  background-color: #ffffff;
-
-}
-
-d3 h1{
-  font-size: 42px;
-  font-weight: 600;
-  text-align: center;
-  margin-top: -55px;
-  color: #000000;
-  margin-right: 10px;
-  margin-left: 10px;
-}
-
-d3 h2{
-   color: #cc0000;
-    font-size: 20px;
-    font-weight:400px;
-     text-align: center;
-     margin-top: 0px;
-     font-weight: 400;
-     letter-spacing: 1px;
-     }
 
 d3 h3{font-size: 24px;
-      font-weight:400px;
      text-align: center;
-     margin-top: -10px;
-     font-weight: 400;
      color: #000000;
+     margin-top: -0.5rem;
+     font-weight:400;
      }
-d3 h4{
-  display: inline-block;
-  text-align: center;
-  margin-top: -5px;
-}
-d3 h4 hh3 a{ 
-   text-decoration: none;
-  
-  font-family: aria;
-  color: #2e93ff;
-  font-size: 18px;
-  font-weight: 300;
-  margin-top: 0px;
-   margin-left:5px;
-   margin-right: 5px;
-}
+
 
 d3 img {
   display: block;
   margin-left: auto;
   margin-right: auto;
   height: auto;
-  margin-top: auto;
+  margin-top: -1rem;
   margin-bottom: 0px;
 }
 
