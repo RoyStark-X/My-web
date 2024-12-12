@@ -256,288 +256,86 @@ d3 img {
 
 
 /* ---------------------------------------- */
-d4 {
+d4, d5 {
   display: flex;
-  flex-direction: row; /* set flex direction to row */
-  justify-content: space-between; /* add space between the two blocks */
-  height: 800px;
-  background-color: #ffffff;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
 }
 
-d4 div1 {
-  width: 50%; /* set width of each block to 48% */
-  display: flex;
-  flex-direction: column;
-  background-color: #000;
-  margin-top: 10px;
-  margin-right: 5px;
-  margin-bottom:5px;
-  margin-left: 10px;
-  text-align: center;
-}
-
-d4 h1 {
-  color: #ffffff;
-  font-size: 36px;
-  font-weight: 600;
-  text-align: center;
-  margin-top: 50px;
-}
-
-d4 h2 {
-  color: #ffffff;
-  font-size: 20px;
-  font-weight: 300px;
-  text-align: center;
-  margin-top: -20px;
-  font-weight: 400;
-}
-
-d4 h3 {
-  margin-top: 0px;
-  
-}
-d4 h3 hh3 a {  text-decoration: none;
-  font-family: aria;
-  color: #2990ff;
-  font-size: 16px;
-  font-weight: 300;
-  margin-left: 10px;
-  margin-right: 10px;
-}
-
-
-d4 div1 img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  height: auto;
-  margin-top: auto;
-  margin-bottom: 0px;
-}
-/* ---------------------------------------- */
-d4 div2 {
-  width: 50%; /* set width of each block to 48% */
+d4 div1, d4 div2, d5 div1, d5 div2 {
+  width: 50%;
   display: flex;
   flex-direction: column;
-  background-color: #ffffff;
-  margin-top: 10px;
-  margin-right: 10px;
-  margin-bottom:5px;
-  margin-left: 5px;
+  align-items: center;
   text-align: center;
 }
 
-d4 h4 {
+d4 h1, d4 h4, d5 h1, d5 h4 {
+  width: 100%;
   color: #000000;
   font-size: 36px;
   font-weight: 600;
   text-align: center;
-  margin-top: 50px;
+  margin: 20px 0 5px 0; /* 减小上下margin */
 }
 
-d4 h5 {
-   color: #000000;
-  font-size: 20px;
-  font-weight: 300px;
+d4 h2, d4 h5, d5 h2, d5 h5 {
+  margin: 2px 0;
+}
+
+/* Learn More链接样式调整 */
+d4 h3, d4 h6, d5 h3, d5 h6 {
+  width: 100%;
   text-align: center;
-  margin-top: -50px;
-  font-weight: 400;
+  margin: 2px 0 15px 0; /* 减小上下margin */
 }
 
-d4 h6{
-  margin-top: -10px;
-  
-}
-d4 h6 hh6 a {
+d4 h3 hh3 a, d4 h6 hh6 a, d5 h3 hh3 a, d5 h6 hh6 a {
   text-decoration: none;
-   margin-left: 10px;
-  margin-right: 10px;
-  font-family: aria;
+  font-family: Arial, sans-serif;
   color: #2e93ff;
   font-size: 16px;
   font-weight: 500;
 }
 
-
-d4 div2 img {
+d4 div1 img, d4 div2 img, d5 div1 img, d5 div2 img {
+  width: 80%;
+  height: 80%;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  height: auto;
-  margin-top: auto;
-  margin-bottom: 0px;
+  margin: 0 auto;
 }
 
 @media screen and (max-width: 800px) {
   d4{
      display: Flex;
     flex-direction: column;
-    height: 830px;
+    height: auto; /* 改为auto */
   }
   
-  d4 div1 {
-width:auto;
-background-color: #000000;
-flex-direction: column;
-height: 400px;
-
-margin-left: 0px;
-margin-right: 0px;
-}
-  d4 div2{
+  d4 div1, d4 div2 {
     width:auto;
-background-color: #ffffff;
-flex-direction: column;
-height: 400px;
-
-margin-left: 0px;
-margin-right: 0px;
+    height: auto; /* 改为auto */
+    margin-left: 0px;
+    margin-right: 0px;
     margin-bottom: 20px;
   }
 
 }
 
 /* ------------------------------------------------------------- */
-d5 {
-  display: flex;
-  flex-direction: row; /* set flex direction to row */
-  justify-content: space-between; /* add space between the two blocks */
-  height: 800px;
-  background-color: #ffffff;
-}
-
-d5 div1 {
-  width: 50%; /* set width of each block to 48% */
-  display: flex;
-  flex-direction: column;
-  background-color: #000;
-  margin-top: 5px;
-  margin-right: 5px;
-  margin-bottom:10px;
-  margin-left: 10px;
-  text-align: center;
-}
-
-d5 h1 {
-  color: #ffffff;
-  font-size: 36px;
-  font-weight: 600;
-  text-align: center;
-  margin-top: 50px;
-}
-
-d5 h2 {
-  color: #ffffff;
-  font-size: 20px;
-  font-weight: 300px;
-  text-align: center;
-  margin-top: -20px;
-  font-weight: 400;
-}
-
-d5 h3 {
-  margin-top: 0px;
-  
-}
-d5 h3 hh3 a {  text-decoration: none;
-  font-family: aria;
-  color: #2990ff;
-  font-size: 16px;
-  font-weight: 300;
-  margin-left: 10px;
-  margin-right: 10px;
-}
-
-
-d5 div1 img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  height: auto;
-  margin-top: auto;
-  margin-bottom: 0px;
-}
-/* ---------------------------------------- */
-d5 div2 {
-  width: 50%; /* set width of each block to 48% */
-  display: flex;
-  flex-direction: column;
-  background-color: #000000;
-  margin-top: 5px;
-  margin-right: 10px;
-  margin-bottom:10px;
-  margin-left: 5px;
-  text-align: center;
-}
-
-d5 h4 {
-  color: #ffffff;
-  font-size: 36px;
-  font-weight: 600;
-  text-align: center;
-  margin-top: 50px;
-}
-
-d5 h5 {
-   color: #ffffff;
-  font-size: 20px;
-  font-weight: 300px;
-  text-align: center;
-  margin-top: -50px;
-  font-weight: 400;
-}
-
-d5 h6{
-  margin-top: -10px;
-  
-}
-d5 h6 hh6 a {
-  text-decoration: none;
-   margin-left: 10px;
-  margin-right: 10px;
-  font-family: aria;
-  color: #2e93ff;
-  font-size: 16px;
-  font-weight: 500;
-}
-
-
-d5 div2 img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  height: auto;
-  margin-top: auto;
-  margin-bottom: 0px;
-}
-
-
-
 @media screen and (max-width: 800px) {
   d5{
-    height: 600px;
+    height: auto; /* 改为auto */
      display: Flex;
     flex-direction: column;
   }
   
-  d5 div1 {
-width:auto;
-background-color: #000000;
-flex-direction: column;
-height: 600px;
-
-margin-left: 0px;
-margin-right: 0px;
-}
-  d5 div2{
+  d5 div1, d5 div2 {
     width:auto;
-background-color: #000000;
-flex-direction: column;
-height: 600px;
-
-margin-left: 0px;
-margin-right: 0px;
+    height: auto; /* 改为auto */
+    margin-left: 0px;
+    margin-right: 0px;
   }
 
 }
