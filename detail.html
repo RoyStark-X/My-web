@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>作品详情</title>
+<link rel="stylesheet" href="Designs.css">
+</head>
+<body>
+<header> 
+		<nav>
+			<ul>
+        
+        <li><a href="index.html"><img src="images/UAV/UAVimage-1.png" ></li>
+            <li><a href="Projects.html">Projects</a></li>
+            <li><a href="Designs.html">Designs</a></li>
+            <li><a href="cv.html">CV</a></li>
+            </ul>
+		</nav>
+</header>
+
+<main class="details-container">
+  <div class="details-left">
+    <div class="details-slider">
+      <!-- 左右切换箭头 -->
+      <div class="arrow left-arrow">&#10094;</div>
+      <div class="arrow right-arrow">&#10095;</div>
+
+      <!-- 大图显示区（可以放多张图，初始只显示第一张） -->
+      <div class="slider-inner">
+        <img src="images/work1-1.jpg" alt="详情图片1" class="active">
+        <img src="images/work1-2.jpg" alt="详情图片2">
+        <img src="images/work1-3.jpg" alt="详情图片3">
+      </div>
+
+      <!-- 小点指示器 -->
+      <div class="dots-container">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </div>
+  </div>
+  <div class="details-right">
+    <h2>作品名称示例</h2>
+    <p>这里是作品的详细介绍文字。可以描述设计理念、使用材料、制作过程、灵感来源以及更多信息。通过左右点击预览区的箭头可以浏览作品的不同视角或相关图片。</p>
+  </div>
+</main>
+
+<script>
+  // 简单的JS逻辑实现左右点击与小点同步
+  const sliderInner = document.querySelector('.slider-inner');
+  const slides = sliderInner.querySelectorAll('img');
+  const prevBtn = document.querySelector('.left-arrow');
+  const nextBtn = document.querySelector('.right-arrow');
+  const dots = document.querySelectorAll('.dot');
+  let currentIndex = 0;
+
+  function updateSlide(index) {
+    slides.forEach((img, i) => {
+      img.classList.toggle('active', i === index);
+    });
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === index);
+    });
+  }
+
+  prevBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    updateSlide(currentIndex);
+  });
+
+  nextBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % slides.length;
+    updateSlide(currentIndex);
+  });
+
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => {
+      currentIndex = i;
+      updateSlide(currentIndex);
+    });
+  });
+</script>
+
+</body>
+</html>

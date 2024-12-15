@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="Haze Removal Guard – Land-Air Tilt-Rotor Drone Project">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Haze Removal Guard Project Overview</title>
+<link rel="stylesheet" href="CM.css">
+<script src="CM.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html"><img src="images/logo3.jpg" alt="UAV Logo"></a></li>
+                <li><a href="Projects.html">Projects</a></li>
+                <li><a href="Designs.html">Designs</a></li>
+                <li><a href="CV.html">CV</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Haze Removal Guard — Land-Air Tilt-Rotor Drone</h2>
+        <p>The Haze Removal Guard is an innovative drone system designed to address haze pollution across diverse and complex terrains. Equipped with a versatile tilt-rotor mechanism, precision spraying systems, and advanced autonomous navigation, this drone can operate at low altitudes, mid-to-high altitudes, and even on the ground, ensuring comprehensive haze removal solutions where traditional methods fall short.</p>
+
+        <div class="intro-images">
+            <img src="images/CM/Air.png" alt="Air Mode">
+            <img src="images/CM/Land.png" alt="Land Mode">
+        </div>
+
+        <section class="sub-section">
+            <h3>System Design</h3>
+            <p>The system integrates a tilt-rotor design, precision spraying technology, robust mechanical structures, and advanced control algorithms. By combining these elements, the Haze Removal Guard delivers efficient haze suppression while maintaining stability, durability, and adaptability to various environmental conditions.</p>
+        </section>
+
+        <section class="sub-section">
+            <h3>Tilt-Rotor Mechanism</h3>
+            <p>The tilt-rotor mechanism allows the drone to seamlessly switch between rotary flight mode, fixed-wing mode, and ground operation mode, providing unparalleled flexibility:</p>
+            <ul>
+                <li><strong>Rotary Flight Mode:</strong> Vertical take-off, hovering, and fine maneuvering at low altitudes.</li>
+                <li><strong>Fixed-Wing Mode:</strong> Higher speed and longer range for mid-to-high altitude haze removal.</li>
+                <li><strong>Ground Operation Mode:</strong> Buffered landing gears enable stable ground movement for haze suppression in urban and enclosed areas.</li>
+            </ul>
+            <div class="image-container">
+                <img src="images/CM/Tilt mechanism explosion animation.gif" alt="Tilt Mechanism Explosion Animation">
+                <img src="images/CM/Tilt-rotor structural design.png" alt="Tilt-Rotor Structural Design">
+            </div>
+        </section>
+
+        <section class="sub-section">
+            <h3>Mechanical Structure</h3>
+            <ul>
+                <li><strong>Buffer Landing Gears:</strong> Shock-absorbing mechanisms ensure stability during take-off, landing, and ground movement.</li>
+                <li><strong>Tilt Mechanism:</strong> High-torque servo motors enable smooth rotor angle adjustments for seamless mode transitions.</li>
+                <li><strong>Material Design:</strong> Lightweight aluminum alloys reduce overall weight and improve durability.</li>
+            </ul>
+            <div class="image-container">
+                <img src="images/CM/wheel.png" alt="Landing Gears and Wheels Structure">
+                <img src="images/CM/Structural design of haze removal device.png" alt="Haze Removal Device Structure">
+                <img src="images/CM/Haze removal device explosion animation.gif" alt="Haze Removal Device Explosion View">
+            </div>
+        </section>
+
+        <section class="sub-section">
+            <h3>Control System</h3>
+            <p>The control system combines low-level hardware with sophisticated algorithms for precise and stable operation:</p>
+            <ul>
+                <li><strong>STC Slave Control System:</strong> Manages motors, servos, and sensors for rotor adjustment and spraying tasks.</li>
+                <li><strong>PID Control Loop:</strong> In rotary mode, ensures stability and minimal attitude deviation; in fixed-wing mode, guarantees responsive height and attitude control with low overshoot.</li>
+                <li><strong>Mode Transition Control:</strong> Cascaded PID algorithms ensure smooth transitions between flight modes.</li>
+            </ul>
+            <div class="image-container">
+                <img src="images/CM/PIDControl loop.png" alt="PID Control Loop Flowchart">
+                <img src="images/CM/STC slave machine1.png" alt="STC Slave Machine Design 1">
+                <img src="images/CM/STC slave machine2.png" alt="STC Slave Machine Design 2">
+            </div>
+        </section>
+
+        <section class="sub-section">
+            <h3>Autonomous Navigation and Mapping</h3>
+            <p>By integrating laser-based SLAM and path planning algorithms, the drone can navigate complex environments autonomously:</p>
+            <ul>
+                <li><strong>SLAM Mapping:</strong> Cartographer-based laser SLAM generates detailed real-time maps in GNSS-denied areas, leveraging sensor fusion and loop closure detection.</li>
+                <li><strong>Path Planning:</strong> A* algorithm provides global path planning, while DWA ensures local obstacle avoidance, enabling safe and efficient navigation.</li>
+            </ul>
+            <p>Extensive simulation using ROS (Gazebo and Rviz) has validated mapping accuracy in both rural and confined environments.</p>
+            <div class="image-container">
+                <img src="images/CM/Astar.png" alt="A* Path Planning Results">
+                <img src="images/CM/SlamMapping.gif" alt="SLAM Mapping Simulation">
+            </div>
+        </section>
+
+        <section class="sub-section">
+            <h3>Innovation Highlights</h3>
+            <ul>
+                <li><strong>Land-Air Conversion:</strong> Tilt-rotor design enables seamless mode transitions (rotary, fixed-wing, ground).</li>
+                <li><strong>Precision Spraying:</strong> Real-time flow adjustment based on haze concentration optimizes resource usage.</li>
+                <li><strong>Autonomous Navigation:</strong> Advanced SLAM and planning algorithms for independent operation in complex terrains.</li>
+                <li><strong>Flexible Operation:</strong> Suitable for low-altitude urban areas and mid-to-high altitude regions.</li>
+            </ul>
+        </section>
+
+        <section class="sub-section">
+            <h3>Practical Applications</h3>
+            <ul>
+                <li><strong>Urban Air Quality Control:</strong> Effective haze removal in cities and enclosed areas.</li>
+                <li><strong>Rural and Mountainous Terrains:</strong> Navigates and suppresses haze in complex geographical areas.</li>
+                <li><strong>Emergency Scenarios:</strong> Rapid deployment for critical haze or pollution events in heavily affected regions.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2024 Haze Removal Guard Project. All rights reserved.
+    </footer>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
+    <title>Multifunctional Dimensional Measurement and Analysis System</title>
+    <link rel="stylesheet" href="LG.css">
+    <script src="LG.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html"><img src="images/logo3.jpg" alt="UAV Logo"></a></li>
+                <li><a href="Projects.html">Projects</a></li>
+                <li><a href="Designs.html">Designs</a></li>
+                <li><a href="CV.html">CV</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="fade-in">
+            <div class="hero-text">
+                <h1>Multi-Dimensional Wheel Hub Measurement System</h1>
+                <p>
+                    This project aims to improve efficiency, precision, and scalability in industrial inspections using a 
+                    non-contact measurement system based on image processing. By combining CCD cameras, laser sensors, 
+                    and advanced algorithms, the system provides reliable multi-feature detection of components, addressing key 
+                    challenges in traditional quality inspection methods.
+                </p>
+            </div>
+            <figure class="hero-image">
+                <video controls width="100%" class="main-image">
+                    <source src="images/LG/FunctionDemo.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <figcaption>System Function Demonstration</figcaption>
+            </figure>
+        </section>
+
+        <!-- Background Section -->
+        <section id="background" class="fade-in">
+            <h2>Background</h2>
+            <p>
+                Traditional inspection methods rely on manual tools like micrometers and gauges, which are labor-intensive, 
+                time-consuming, and prone to human error. These methods fail to meet modern industrial demands, especially 
+                for large-scale production, where precision, efficiency, and automation are critical.
+                This system leverages non-contact image processing to overcome these challenges, offering significant 
+                improvements in accuracy, speed, and functionality.
+            </p>
+            
+        </section>
+
+        <!-- Mechanical System -->
+        <section id="mechanical-system" class="fade-in">
+            <h2>Mechanical System</h2>
+            <p>
+                The mechanical system is a critical part of the measurement process, designed for precision and efficiency. 
+                It integrates the following:
+            </p>
+            <ul>
+                <li><strong>CCD Camera Mount and Positioning:</strong>  
+                    <ul>
+                        <li>The camera is mounted on a linear rail, enabling movement along X, Y, and Z axes.</li>
+                        <li>Motorized adjustments ensure precise alignment for capturing images of varying object sizes.</li>
+                    </ul>
+                </li>
+                <li><strong>Laser Sensor Integration:</strong>
+                    <ul>
+                        <li>Mounted on a rigid support structure to maintain stability during measurements.</li>
+                        <li>Features vibration dampers to ensure accuracy in high-speed operations.</li>
+                    </ul>
+                </li>
+                <li><strong>Fixture and Clamping Mechanism:</strong>
+                    <ul>
+                        <li>Includes pneumatically driven clamps with dual-action cylinders for stable and secure positioning.</li>
+                        <li>Self-centering jaws ensure consistent alignment, while the rotary platform enables 360-degree measurements.</li>
+                        <li>Constructed from lightweight, durable aluminum alloys for reliability in industrial environments.</li>
+                    </ul>
+                </li>
+                <li><strong>Rotary Table:</strong>
+                    <ul>
+                        <li>Controlled by a high-precision servo motor to rotate components smoothly.</li>
+                        <li>Works seamlessly with the pneumatic clamping system to measure all dimensions in a single cycle.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <div class="media-container">
+                <!-- 图片展示区 -->
+                <figure class="media-item">
+                    <img src="images/LG/ladiarsensor.png" alt="Laser Sensor" class="system-image">
+                    <figcaption>Laser Distance Sensor</figcaption>
+                </figure>
+                
+                <figure class="media-item">
+                    <img src="images/LG/CCDcamera.png" alt="CCD Camera" class="system-image">
+                    <figcaption>CCD Camera System</figcaption>
+                </figure>
+
+                <figure class="media-item">
+                    <img src="images/LG/Fixture.png" alt="Fixture System" class="system-image">
+                    <figcaption>Fixture System</figcaption>
+                </figure>
+
+                <!-- 视频展示区 -->
+                <figure class="media-item video-item">
+                    <video controls class="system-video">
+                        <source src="images/LG/Model.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <figcaption>Mechanical System Model</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- Image Processing Workflow -->
+        <section id="image-processing" class="fade-in">
+            <h2>Image Processing Workflow</h2>
+            <p>
+                The system uses advanced image processing algorithms to calculate component dimensions. The workflow includes:
+            </p>
+            <ol>
+                <li><strong>Preprocessing:</strong> Converts raw images to grayscale, removes noise, and enhances edges.</li>
+                <li><strong>Contour Extraction:</strong> Identifies the boundaries of the object using morphological operations.</li>
+                <li><strong>Dimension Calculation:</strong> Determines critical parameters such as radius, area, and perimeter.</li>
+                <li><strong>Results Output:</strong> Outputs results in standard units and stores the data for further analysis.</li>
+            </ol>
+            
+            <div class="images-row">
+                <figure>
+                    <img src="images/LG/wheelhools.png" alt="Original wheel holes">
+                    <figcaption>Original Image</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/LG/detectedhools.png" alt="Detected holes">
+                    <figcaption>Hole Detection Results</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/LG/areapixels_perimeter.png" alt="Area and perimeter measurement">
+                    <figcaption>Area and Perimeter Measurement</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- System Features -->
+        <section id="features" class="fade-in">
+            <h2>System Features</h2>
+            <ul>
+                <li><strong>Efficiency:</strong> Handles high-volume inspections in minimal time.</li>
+                <li><strong>Precision:</strong> Achieves micrometer-level accuracy through advanced calibration.</li>
+                <li><strong>Versatility:</strong> Measures dimensions and detects defects in various shapes and materials.</li>
+                <li><strong>Real-Time Feedback:</strong> Provides instant defect detection and supports automated handling.</li>
+            </ul>
+
+            
+        </section>
+
+        <!-- Applications -->
+        <section id="applications" class="fade-in">
+            <h2>Applications</h2>
+            <p>
+                This system is applicable across multiple industries:
+            </p>
+            <ul>
+                <li><strong>Automotive Manufacturing:</strong> Measuring wheel hub dimensions and bolt-hole alignment.</li>
+                <li><strong>Electronics:</strong> Inspecting high-precision electronic components.</li>
+                <li><strong>Aerospace:</strong> Analyzing irregular shapes like cam profiles and gear teeth.</li>
+                <li><strong>Mass Production Lines:</strong> Real-time inspection and defect handling during large-scale manufacturing.</li>
+            </ul>
+        </section>
+    </main>
+
+    <button class="scroll-to-top" aria-label="Scroll to top">↑</button>
+
+</body>
+</html>

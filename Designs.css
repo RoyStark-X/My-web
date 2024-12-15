@@ -1,0 +1,249 @@
+/* 使用您提供的header样式 */
+header { 
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(234, 234, 234, 0.9); /* 使用 rgba 添加透明度 */
+  backdrop-filter: blur(5px); /* 添加毛玻璃效果 */
+  transition: all 0.3s ease; /* 添加过渡效果 */
+  padding: 0px;
+  z-index: 9999;
+}
+
+header h1 {margin: 0;}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+nav li {
+  display: inline-block;
+  margin-right: 40px;
+}
+
+nav a {
+  color: #000000;
+  text-decoration: none;
+}
+
+nav ul li img {
+  display: flex;
+  position:relative;
+  margin-top: auto;
+  margin-right:0px; 
+  margin-bottom: -2px;
+  width: 15px;
+  height: 15px;
+}
+
+/* 通用样式重置 */
+body,html {
+  margin-top: 20px;
+  margin-left: 5em;
+  margin-right: 5em;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+
+/* Gallery布局 */
+.gallery-container {
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 30px; /* 增加内边距 */
+  column-count: 2;  /* 设置2列 */
+  column-gap: 20px; /* 列间距 */
+}
+
+/* 移除 gallery-row */
+.gallery-row {
+  display: block;
+  margin-bottom: 0;
+}
+
+/* Gallery卡片样式 */
+.gallery-item {
+  width: 100%;
+  display: inline-block;
+  margin-bottom: 20px;
+  break-inside: avoid; /* 防止项目被分割 */
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.gallery-item img {
+  width: 100%;
+  object-fit: contain; /* 改为contain确保图片完整显示 */
+  padding: 10px; /* 添加内边距防止图片贴边 */
+  box-sizing: border-box;
+  background: #fff;
+  border-radius: 8px 8px 0 0;
+  display: block;
+}
+
+/* 添加作品标题样式 */
+.gallery-item-title {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+  font-size: 16px;
+  color: #333;
+  border-top: 1px solid #eee;
+  background: white;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Modal 弹窗样式 */
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 99999; 
+  left: 0; 
+  top: 0; 
+  width: 100%; 
+  height: 100%; 
+  background-color: rgba(0,0,0,0.7);
+  overflow: auto;
+}
+
+.modal-content {
+  position: relative;
+  background: #fff;
+  width: 80%;
+  max-width: 1000px;
+  margin: 50px auto;
+  border-radius: 5px;
+  display: flex;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.modal-close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  font-size: 25px;
+  cursor: pointer;
+  color: #333;
+}
+
+/* Modal左右两部分布局 */
+.modal-left {
+  width: 60%;
+  position: relative;
+  padding-right: 20px;
+  box-sizing: border-box;
+  border-right: 1px solid #ddd;
+}
+
+.modal-right {
+  width: 40%;
+  padding-left: 20px;
+  box-sizing: border-box;
+}
+
+.modal-title {
+  margin-top: 0;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.modal-description {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* 左右箭头 */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 30px;
+  color: #333;
+  background: rgba(255,255,255,0.8);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+  z-index: 10;
+}
+
+.left-arrow {
+  left: 10px;
+}
+
+.right-arrow {
+  right: 10px;
+}
+
+/* 图片滑动区 */
+.modal-slider {
+  position: relative;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.modal-slider img {
+  max-width: 100%;
+  height: auto;
+  display: none;
+}
+
+.modal-slider img.active {
+  display: block;
+  margin: 0 auto;
+}
+
+/* Modal视频容器样式 */
+.modal-slider video {
+  max-width: 100%;
+  height: auto;
+  display: none;
+  margin: 0 auto;
+}
+
+.modal-slider video.active {
+  display: block;
+}
+
+/* 小点指示器 */
+.dots-container {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.dots-container .dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: #ccc;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.dots-container .dot.active {
+  background: #333;
+}
