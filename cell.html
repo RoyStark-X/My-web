@@ -1,45 +1,219 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Cellpose 在线分割</title>
+    <title>Cell Analysis System</title>
+    <link rel="stylesheet" href="cell.css">
+    <style>
+        .pixel-info {
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #f5f5f5;
+            border-radius: 4px;
+        }
+        .diameter-input {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #f5f5f5;
+            border-radius: 4px;
+        }
+        #inputImage {
+            cursor: crosshair;
+        }
+    </style>
 </head>
 <body>
-    <h1>上传细胞图片</h1>
-    <input type="file" id="imageInput" accept="image/*">
-    <button onclick="uploadImage()">上传并处理</button>
-    <div id="result"></div>
+    <h1>Upload Cell Microscopy Image</h1>
+    <div class="upload-controls">
+        <input type="file" id="imageInput" accept="image/*" onchange="previewImage(this)">
+        <button onclick="processImage()">Start Analysis</button>
+    </div>
+    
+    <div class="container">
+        <div class="image-section">
+            <h3>Input Image</h3>
+            <img id="inputImage" alt="Input Image">
+            <div class="pixel-info">
+                <h4>Pixel Information</h4>
+                <p>Click on the image to get pixel information</p>
+                <div id="pixelInfo"></div>
+            </div>
+            <div class="diameter-input">
+                <h4>Cell Diameter Setting</h4>
+                <input type="number" id="diameterInput" value="100" min="1">
+                <p>Default: 100 pixels. Adjust based on your cell size.</p>
+            </div>
+        </div>
+        <div class="image-section">
+            <h3>Segmentation Result</h3>
+            <img id="outputImage" alt="Segmentation Result">
+        </div>
+        <div id="analysis">
+            <h3>AI Analysis Report</h3>
+            <div id="analysisText" class="analysis-report"></div>
+        </div>
+    </div>
 
     <script>
-        async function uploadImage() {
+        // Pixel detection functionality
+        document.getElementById('inputImage').addEventListener('click', function(e) {
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            canvas.width = this.naturalWidth;
+            canvas.height = this.naturalHeight;
+            ctx.drawImage(this, 0, 0);
+
+            // Get click coordinates relative to image
+            const rect = this.getBoundingClientRect();
+            const x = Math.round((e.clientX - rect.left) * (this.naturalWidth / rect.width));
+            const y = Math.round((e.clientY - rect.top) * (this.naturalHeight / rect.height));
+
+            // Get pixel data
+            const pixel = ctx.getImageData(x, y, 1, 1).data;
+            
+            // Display pixel information
+            document.getElementById('pixelInfo').innerHTML = `
+                Position: (${x}, ${y})<br>
+                RGB: (${pixel[0]}, ${pixel[1]}, ${pixel[2]})<br>
+                Brightness: ${Math.round((pixel[0] + pixel[1] + pixel[2]) / 3)}
+            `;
+        });
+
+        function previewImage(input) {
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const inputImage = document.getElementById('inputImage');
+                    inputImage.src = e.target.result;
+                    inputImage.onerror = () => {
+                        alert('Failed to load input image');
+                        inputImage.src = '';
+                    };
+                };
+                reader.onerror = () => {
+                    alert('Failed to read image');
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        function formatAnalysisText(text) {
+            // Split by numbered sections using lookbehind for numbers and dots
+            const sections = text.split(/(?=\d+\.\s*\*\*)/g); // 使用正向断言分割
+            let html = '';
+            
+            sections.forEach(section => {
+                // Extract number and title
+                const numberMatch = section.match(/^(\d+)\./);
+                const titleMatch = section.match(/\*\*(.*?)\*\*/);
+                const description = section.replace(/^\d+\.\s*\*\*.*?\*\*\s*:?\s*/, "").trim();
+
+                if (numberMatch && titleMatch) {
+                    html += `
+                        <div class="analysis-item">
+                            <div class="flex items-start">
+                                <span class="number">${numberMatch[1]}.</span>
+                                <div class="content">
+                                    <h4 class="title">${titleMatch[1]}</h4>
+                                    <p class="description">${description}</p>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }
+            });
+            
+            return html;
+        }
+
+        // 在processImage函数中修改:
+        async function processImage() {
             const fileInput = document.getElementById('imageInput');
             const file = fileInput.files[0];
             if (!file) {
-                alert('请选择图片！');
+                alert('Please select an image first!');
                 return;
             }
 
+            // Get diameter value
+            const diameter = document.getElementById('diameterInput').value;
+
+            // Send request
             const formData = new FormData();
             formData.append('image', file);
+            formData.append('diameter', diameter);
 
             try {
-                // 确保地址与后端一致
-                const response = await fetch('http://127.0.0.1:5000/upload', {
+                const response = await fetch('http://localhost:5000/upload', {
                     method: 'POST',
                     body: formData
                 });
 
                 if (!response.ok) {
-                    throw new Error(`HTTP 错误: ${response.status}`);
+                    throw new Error(`HTTP error: ${response.status}`);
                 }
 
-                const blob = await response.blob();
-                const imgUrl = URL.createObjectURL(blob);
-                const img = document.createElement('img');
-                img.src = imgUrl;
-                img.style.maxWidth = '500px';
-                document.getElementById('result').appendChild(img);
+                const data = await response.json();
+                
+                // Display segmentation result
+                const outputImage = document.getElementById('outputImage');
+                outputImage.src = data.image_url;
+                outputImage.onerror = () => {
+                    alert('Failed to load segmentation result image');
+                    outputImage.src = '';
+                };
+
+                // Start polling for analysis results
+                if (data.process_id) {
+                    pollAnalysisResult(data.process_id);
+                }
+                
             } catch (error) {
-                alert('处理失败: ' + error.message);
+                alert('Failed to process: ' + error.message);
+            }
+        }
+
+        // 添加轮询函数
+        async function pollAnalysisResult(processId) {
+            const analysisText = document.getElementById('analysisText');
+            analysisText.innerHTML = 'Analyzing image...';
+            
+            const startTime = Date.now();
+            const timeout = 90000; // 90秒超时
+            const initialInterval = 2000; // 初始2秒
+            const maxInterval = 5000; // 最大5秒
+            let currentInterval = initialInterval;
+            
+            while (true) {
+                try {
+                    // 检查是否超时
+                    if (Date.now() - startTime > timeout) {
+                        analysisText.innerHTML = '分析超时，请重试';
+                        break;
+                    }
+                    
+                    const response = await fetch(`http://localhost:5000/analysis/${processId}`);
+                    if (!response.ok) {
+                        throw new Error(`HTTP error: ${response.status}`);
+                    }
+                    
+                    const data = await response.json();
+                    
+                    if (data.status === 'completed') {
+                        analysisText.innerHTML = data.analysis;
+                        break;
+                    } else if (data.error) {
+                        analysisText.innerHTML = `Analysis error: ${data.error}`;
+                        break;
+                    }
+                    
+                    // 渐进式增加轮询间隔
+                    currentInterval = Math.min(currentInterval * 1.5, maxInterval);
+                    await new Promise(resolve => setTimeout(resolve, currentInterval));
+                    
+                } catch (error) {
+                    analysisText.innerHTML = `Failed to get analysis: ${error.message}`;
+                    break;
+                }
             }
         }
     </script>
