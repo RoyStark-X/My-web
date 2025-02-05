@@ -97,33 +97,30 @@
         }
 
         function formatAnalysisText(text) {
-            // Split by numbered sections using lookbehind for numbers and dots
-            const sections = text.split(/(?=\d+\.\s*\*\*)/g); // 使用正向断言分割
+            // 匹配Markdown块
+            const sections = text.split(/(?=\d+\.\s*\*\*)/g);
             let html = '';
-            
             sections.forEach(section => {
-                // Extract number and title
-                const numberMatch = section.match(/^(\d+)\./);
-                const titleMatch = section.match(/\*\*(.*?)\*\*/);
-                const description = section.replace(/^\d+\.\s*\*\*.*?\*\*\s*:?\s*/, "").trim();
+                const numberMatch = section.match(/^(\d+)\./); // 匹配序号
+                const titleMatch = section.match(/\*\*(.*?)\*\*/); // 匹配标题
+                const description = section.replace(/^\d+\.\s*\*\*.*?\*\*\s*:?\s*/, "").trim(); // 去掉序号和标题保留内容
 
                 if (numberMatch && titleMatch) {
                     html += `
                         <div class="analysis-item">
-                            <div class="flex items-start">
+                            <div class="header">
                                 <span class="number">${numberMatch[1]}.</span>
-                                <div class="content">
-                                    <h4 class="title">${titleMatch[1]}</h4>
-                                    <p class="description">${description}</p>
-                                </div>
+                                <h4 class="title">${titleMatch[1]}</h4>
                             </div>
+                            <p class="description">${description}</p>
                         </div>
                     `;
                 }
             });
-            
-            return html;
+            return html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>'); // 确保替换所有加粗字符
         }
+
+
 
         // 在processImage函数中修改:
         async function processImage() {
@@ -198,9 +195,11 @@
                     
                     const data = await response.json();
                     
+                    // 替换原来的赋值逻辑
                     if (data.status === 'completed') {
-                        analysisText.innerHTML = data.analysis;
+                        analysisText.innerHTML = formatAnalysisText(data.analysis); // 使用格式化后的文本
                         break;
+
                     } else if (data.error) {
                         analysisText.innerHTML = `Analysis error: ${data.error}`;
                         break;
