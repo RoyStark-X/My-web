@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+	<title>Imaginix</title>
+	<link rel="stylesheet" href="IM.css">
+  
+  <style type="text/css">
+    body,p {margin: 0;}
+  </style>
+  <!--消除页边距-->
+
+    <script src="IM.js"></script>
+
+    
+</head>
+<link rel="icon" href="images/logo3.jpg" type="image/x-icon">
+  
+<body>
+  <header>
+
+		<nav>
+			<ul>
+        
+        <li><a href="index.html"><img src="images/logo3.jpg" ></li>
+
+         
+            <li><a href="Projects.html">Projects</a></li>
+            <li><a href="Designs.html">Designs</a></li>
+            <li><a href="cv.html">CV</a></li>
+            <li><a href="IM.html">Imaginix</a></li>
+            </ul>
+
+      
+		</nav>
+    
+	</header>
+  <!--------------------------------------------->
+
+  
+  <d1>
+    <div class="hero-section">
+        <h1>Introduce Imaginix - An AI 3D modeling platform</h1>
+        <p></p>
+      </div>
+</d1>
+
+  <!--------------------------------------------->
+
+    <d2>
+        <section class="d2-section">
+            <div class="d2-content">
+                <h2>introduction</h2>
+                <p>
+                    This AI-powered parametric modeling project enables users to create and modify 3D objects in PythonOCC by entering natural-language or JSON-formatted commands. It seamlessly integrates a custom memory manager to store each modeling step, and a command parser that interprets instructions like creating shapes, performing Boolean operations, moving parts, or applying colors.
+                </p>
+            </div>
+            <div class="d2-images">
+                <img src="images/IM/desk1.png" alt="1">
+                <img src="images/IM/desk2.png" alt="2">
+            </div>
+        </section>
+    </d2>
+
+  <!--------------------------------------------->
+
+<d3>
+    <section class="d3-section">
+        <video src="images/IM/vidI.mp4" class="d3-video" controls autoplay muted loop>
+            你的浏览器不支持视频标签
+        </video>
+        <div class="d3-content">
+            <h2>Core Features</h2>
+            <p>
+                Parametric Modeling: Users can define dimensions, shapes, and transformations through straightforward commands such as create_cube, move, or boolean_union.
+            </p>
+            <p>
+                AI Integration: A language model can generate or refine 3D instructions, automatically proposing new steps or improvements based on previously stored context.
+            </p>
+            <p>
+                Memory-Based Workflow: Each modeling step (e.g., shape creation or modification) is added to a round-by-round memory, letting AI or users build on all prior actions.
+            </p>
+            <p>
+                Custom Command Parser: Commands are parsed into PythonOCC operations, making it easy to create, transform, colorize, or combine objects.
+            </p>
+            <p>
+                3D Visualization: The Viewer3D class uses PythonOCC's AIS_Shape rendering to display the geometry in real time with configurable colors.
+            </p>
+        </div>
+    </section>
+</d3>
+
+  <!--------------------------------------------->
+
+<d4>
+    <section class="d4-section">
+        <div class="d4-content">
+            <h2>Multi-Modal Fusion and Multi-Step Execution</h2>
+            <p>Beyond text-based command parsing, the project can incorporate multi-modal methods—like analyzing images of partially built models or real-world references—to generate or refine further modeling steps. In a multi-step workflow, each iteration references the entire history of modeling actions plus any additional data (images, partial scans, etc.), allowing the AI or user to gradually evolve the design in a stepwise manner.</p>
+        </div>
+        
+        <div class="slideshow-container">
+            <!-- 轮播图片 -->
+            <div class="mySlides fade">
+                <img src="images/IM/desk1.png" alt="模型1">
+            </div>
+            <div class="mySlides fade">
+                <img src="images/IM/desk2.png" alt="模型2">
+            </div>
+            <div class="mySlides fade">
+                <img src="images/IM/desk3.png" alt="模型3">
+            </div>
+            <!-- 前后按钮 -->
+            <a class="prev" onclick="plusSlides(-1)">❮</a>
+            <a class="next" onclick="plusSlides(1)">❯</a>
+        </div>
+        <!-- 指示点 -->
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span> 
+            <span class="dot" onclick="currentSlide(2)"></span> 
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+    </section>
+</d4>
+
+  <!--------------------------------------------->
+
+<div id="imageModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="modalImg">
+</div>
+
+<d5>
+    <section class="d5-section">
+        <div class="d5-content">
+            <h2>Future Prospects</h2>
+            <p>
+                In upcoming releases, the system aims to introduce a richer command library and advanced part-assembly capabilities, enabling complex assemblies of multiple 3D components. By integrating a simulation module, the pipeline can progress from design and modeling to physical or structural analysis, then optimization, and ultimately real-world usage—completing a fully AI-driven industrial modeling workflow.
+            </p>
+        </div>
+    </section>
+</d5>
+
+</body>
+</html>
